@@ -1,0 +1,136 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+    color: #551a8b;
+}
+
+@font-face {
+    font-family: LobsterTwo;
+    src: url('LobsterTwo-Regular.otf') format('opentype');
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    background-image: url('https://i.pinimg.com/originals/79/6c/be/796cbe4049f58b297472019762b6af9c.gif');
+    overflow: hidden;
+    background-position: center;
+    font-size: 4vmin;
+    font-family: LobsterTwo;
+}
+
+.card {
+    height: 80.5vmin;
+    width: 100vmin;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.page {
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    left: 25%;
+    cursor: pointer;
+    transition: transform 1s, left 1s;
+    transform-origin: 0;
+    transform-style: preserve-3d;
+}
+
+.flipped {
+    transform: rotateY(-180deg);
+}
+
+.front, .back {
+    height: 100%; /* This should go elsewhere */
+    width: 100%;
+    box-shadow: 0 0 10px 0 #777;
+    position: absolute;
+    backface-visibility: hidden;
+    background-color: white;
+}
+
+.front {
+    z-index: 2;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.front-pic {
+/*     overflow: hidden; */
+    background-position: center;
+    background-image: url('https://static1.squarespace.com/static/5341cb72e4b02233d744c6b8/t/5368c4b9e4b087e75b0cdf72/1399375034255/');
+    background-size: 80%;
+    background-repeat: no-repeat;
+}
+
+.control-panel {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.btn:hover {
+    
+}
+
+.blank {
+    background-color: white;
+}
+
+.page:not(.flipped) {
+    z-index: 2;
+}
+
+.page:not(.flipped) ~ .page:not(.flipped) {
+    z-index: 0;
+}
+.paragraph {
+    margin: 0;
+    padding: 2vmin;
+}
+
+.font1 {
+  font-size: .75em;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#letterKC {
+  color: purple;
+  font-size: 16px;
+  border-style: solid;
+}
+
+#intro {
+  text-indent: 50px;
+}
+
+#signatureKC {
+  color:blue;
+  text-indent: 50%;
+}
+
+#backpageKC {
+  background-image: url("https://media.giphy.com/media/3ohryitJOzSTrCnBe0/giphy.gif");
+/*   background-color: black; */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center top; 
+  color:purple;
+  border-style: solid;
+}
